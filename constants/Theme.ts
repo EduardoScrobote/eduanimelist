@@ -24,3 +24,6 @@ export const Theme = {
     montserrat: "Montserrat",
   },
 };
+
+export const DefaultBackGround =
+  "https://img.freepik.com/vetores-gratis/fundo-escuro-de-baixo-poli_1048-7971.jpg?w=1380&t=st=1703856055~exp=1703856655~hmac=25f0f0700b22922eb99bef2fe959871086cad286c0072cdcc7c1afd776e77639";

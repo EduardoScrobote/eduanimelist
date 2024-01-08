@@ -8,7 +8,9 @@ export const Text = styled.text<{
   mb?: string;
   mt?: string;
   ml?: string;
+  padding?: string;
 }>`
+  padding: ${(props) => props.padding};
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => props.weight};
