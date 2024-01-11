@@ -7,6 +7,7 @@ import { Text } from "@/components/Text/text.styled";
 import GlobalStyle from "../globalStyles";
 import { Input } from "@/components/Inputs/inputs.styled";
 import { Button } from "@/components/Buttons/button.styled";
+import InputText from "@/components/Inputs/InputText";
 
 function Register() {
   return (
@@ -22,9 +23,9 @@ function Register() {
             style={{ marginTop: "8px", marginLeft: "8px" }}
           />
         </Tittle>
-        <Input inputSize="28rem" height="3.5rem" value="Usuario" mt="8rem" />
-        <Input inputSize="28rem" height="3.5rem" value="E-mail" mt="2rem" />
-        <Input inputSize="28rem" height="3.5rem" value="Senha" mt="2rem" />
+        <InputText value="Nome de Usuario" width="80%" height="4rem" mt="8px" />
+        <InputText value="E-mail" width="80%" height="4rem" mt="8px" />
+        <InputText value="Senha" width="80%" height="4rem" mt="8px" />
         <Button btnSize="28rem" btnHeight="4rem">
           Logar-se
         </Button>

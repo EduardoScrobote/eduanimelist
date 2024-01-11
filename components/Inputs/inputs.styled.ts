@@ -1,14 +1,21 @@
 import { Theme } from "@/constants/Theme";
 import styled from "styled-components";
 
+export const InputDiv = styled.div<{ width?: string; height?: string }>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Input = styled.input<{
-  inputSize: string;
-  height: string;
+  width?: string;
+  height?: string;
   mt?: string;
   mb?: string;
 }>`
-  width: ${(props) => props.inputSize};
-  height: ${(props) => props.height};
+  width: 100%;
+  height: 100%;
   outline: none;
   border: 0;
   background-color: ${Theme.colors.gray};

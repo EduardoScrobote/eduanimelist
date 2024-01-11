@@ -5,6 +5,7 @@ import { Header, LoginContainer, LoginDiv } from "./Login.styled";
 import { Text } from "@/components/Text/text.styled";
 import { Input } from "@/components/Inputs/inputs.styled";
 import { Button } from "@/components/Buttons/button.styled";
+import InputText from "@/components/Inputs/InputText";
 
 export default function Home() {
   return (
@@ -21,9 +22,9 @@ export default function Home() {
               style={{ marginTop: "8px", color: "white", marginLeft: "8px" }}
             />
           </Header>
-          <Input inputSize="28rem" height="3.5rem" value="Usuario" mt="2rem" />
-          <Input inputSize="28rem" height="3.5rem" value="Senha" />
-          <Button btnSize="28rem" btnHeight="4rem">
+          <InputText value="Usuario" width="80%" height="4rem" mt="8px" />
+          <InputText value="Senha" width="80%" height="4rem" mt="8px" />
+          <Button btnSize="90%" btnHeight="4rem">
             Logar
           </Button>
           <Text color="white" fontSize="16px">
