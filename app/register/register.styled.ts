@@ -16,6 +16,7 @@ export const RegisterContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   border: 2px solid white;
+  gap: 16px;
   border-radius: 36px;
   align-items: center;
 `;
