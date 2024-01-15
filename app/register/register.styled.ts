@@ -10,7 +10,7 @@ export const RegisterMainDiv = styled.div`
 `;
 
 export const RegisterContainer = styled.div`
-  width: 35%;
+  width: 50%;
   height: 85vh;
   display: flex;
   flex-direction: column;

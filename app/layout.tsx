@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 const inter = Inter({ subsets: ["latin"] });
@@ -12,8 +11,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" title="EduAnimeList">
       <QueryClientProvider client={queryClient}>
+        <title>EduAnimeList</title>
         <body className={inter.className}>{children}</body>
       </QueryClientProvider>
     </html>

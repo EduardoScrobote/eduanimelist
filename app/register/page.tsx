@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 
+import RegisterDesktop from "./components/RegisterDesktop";
+import RegisterMobile from "./components/RegisterMobile/RegisterMobile";
+
 import { SiDatabricks } from "react-icons/si";
 import { RegisterContainer, RegisterMainDiv, Tittle } from "./register.styled";
 import { Text } from "@/components/Text/text.styled";
@@ -8,38 +11,27 @@ import GlobalStyle from "../globalStyles";
 import { Input } from "@/components/Inputs/inputs.styled";
 import Button from "@/components/Buttons/Button";
 import InputText from "@/components/Inputs/InputText";
+import ResponsiveComponent from "@/helpers/responsiveHelper/ResponsiveComponent";
+import RegisterTablet from "./components/RegisterTablet/RegisterTablet";
+
+const handleResponsive = (size: string) => {
+  switch (size) {
+    case "xs":
+      return <RegisterMobile />;
+      break;
+    case "sm":
+      return <RegisterTablet />;
+    default:
+      return <RegisterDesktop />;
+      break;
+  }
+};
 
 function Register() {
   return (
-    <RegisterMainDiv>
-      <GlobalStyle />
-      <RegisterContainer>
-        <Tittle>
-          <Text color="white" weight="bold" fontSize="48px" mb="32px">
-            Registre-se
-          </Text>
-          <SiDatabricks
-            size={34}
-            color={"white"}
-            style={{
-              marginTop: "8px",
-              marginLeft: "8px",
-              marginBottom: "32px",
-            }}
-          />
-        </Tittle>
-        <InputText value="Nome de Usuario" width="80%" height="4rem" mt="8px" />
-        <InputText value="E-mail" width="80%" height="4rem" mt="8px" />
-        <InputText value="Senha" width="80%" height="4rem" mt="8px" />
-        <Button width="80%" height="6rem" name="Registrar" />
-        <Text color="white" mt="32px" fontSize="16px">
-          Já possui uma conta ?
-          <Text color="#0f94b5" ml="6px" fontSize="16px">
-            Faça Login!
-          </Text>
-        </Text>
-      </RegisterContainer>
-    </RegisterMainDiv>
+    <ResponsiveComponent>
+      {({ size }) => handleResponsive(size)}
+    </ResponsiveComponent>
   );
 }
 
