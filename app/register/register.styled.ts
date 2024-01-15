@@ -14,11 +14,10 @@ export const RegisterContainer = styled.div`
   height: 85vh;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   justify-content: center;
-  align-items: center;
   border: 2px solid white;
-  border-radius: 32px;
+  border-radius: 36px;
+  align-items: center;
 `;
 
 export const Tittle = styled.div`

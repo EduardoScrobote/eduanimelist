@@ -9,7 +9,6 @@ import { RegisterContainer, RegisterMainDiv, Tittle } from "./register.styled";
 import { Text } from "@/components/Text/text.styled";
 import GlobalStyle from "../globalStyles";
 import { Input } from "@/components/Inputs/inputs.styled";
-import Button from "@/components/Buttons/Button";
 import InputText from "@/components/Inputs/InputText";
 import ResponsiveComponent from "@/helpers/responsiveHelper/ResponsiveComponent";
 import RegisterTablet from "./components/RegisterTablet/RegisterTablet";

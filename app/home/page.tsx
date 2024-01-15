@@ -61,6 +61,7 @@ function Page() {
       ) : (
         <HomeMainDiv>
           <GlobalStyle />
+          {/* <HomeContainer> */}
           <CoverImage
             bgImg={
               animeData.coverImage?.original

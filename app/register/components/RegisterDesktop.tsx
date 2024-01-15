@@ -5,6 +5,7 @@ import GlobalStyle from "@/app/globalStyles";
 import { SiDatabricks } from "react-icons/si";
 import InputText from "@/components/Inputs/InputText";
 import Button from "@/components/Buttons/Button";
+Button;
 
 function RegisterDesktop() {
   return (
