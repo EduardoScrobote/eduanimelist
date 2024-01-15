@@ -1,9 +1,16 @@
 import { Theme } from "@/constants/Theme";
 import styled from "styled-components";
 
-export const Button = styled.button<{ btnSize: string; btnHeight: string }>`
-  width: ${(props) => props.btnSize};
-  height: ${(props) => props.btnHeight};
+export const ButtonDiv = styled.div<{ width?: string; height?: string }>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StyledButton = styled.button<{}>`
+  width: 100%;
+  height: 100%;
   background-color: ${Theme.colors.primary};
   color: ${Theme.colors.white};
   border: 0;
