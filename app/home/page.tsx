@@ -31,6 +31,7 @@ const queryClient = new QueryClient();
 
 function Page() {
   const [animeNumber, setAnimeNumber] = useState<number>(1);
+  const [animeTitle, setAnimeTitle] = useState<string>("en");
 
   const { data, isLoading } = useQuery(["animes", animeNumber], () =>
     api.getAnimeData(animeNumber)
@@ -53,6 +54,25 @@ function Page() {
   const year = date.getFullYear();
 
   const youtubeLink = `https://www.youtube.com/embed/${animeData.youtubeVideoId}`;
+
+  const setTitle = () => {
+    if (animeData.tittles.en != null) {
+      console.log("EN");
+      return null;
+    }
+    if (animeData.tittles.en_jp != null) {
+      console.log("EN_JP");
+      return setAnimeTitle("en_jp");
+    }
+    if (animeData.tittles.ja_jp) {
+      console.log("JA_JP");
+      return setAnimeTitle("ja_jp");
+    } else {
+      return setAnimeNumber((prevState) =>
+        animeData.id > 1 ? prevState : prevState - 1
+      );
+    }
+  };
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -83,7 +103,13 @@ function Page() {
                 <Poster posterImg={animeData.posterImage.original} />
                 <Tittle>
                   <Text color="white" fontSize="32px" mb="12px">
-                    {animeData.titles.en}
+                    {animeTitle === "en"
+                      ? animeData.titles.en
+                      : animeTitle === "en_jp"
+                      ? animeData.titles.en_jp
+                      : animeTitle === "ja_jp"
+                      ? animeData.titles.ja_jp
+                      : "Titulo inexistente"}
                   </Text>
                   <Text color="white" fontSize="18px" mt="24px">
                     Rating: {animeData.averageRating}
@@ -111,7 +137,11 @@ function Page() {
                 ></iframe>
               </VideoContainer>
             </AnimeContainer>
-            <Arrow onClick={() => setAnimeNumber((prevState) => prevState + 1)}>
+            <Arrow
+              onClick={() => {
+                setAnimeNumber((prevState) => prevState + 1);
+              }}
+            >
               <FaLongArrowAltRight></FaLongArrowAltRight>
             </Arrow>
           </CoverImage>
