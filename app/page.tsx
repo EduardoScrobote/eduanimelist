@@ -24,9 +24,7 @@ export default function Home() {
           </Header>
           <InputText value="Usuario" width="80%" height="4rem" mt="8px" />
           <InputText value="Senha" width="80%" height="4rem" mt="8px" />
-          <Button width="90%" height="4rem">
-            Logar
-          </Button>
+          <Button width="80%" height="6rem" name="Logar" />
           <Text color="white" fontSize="16px">
             Não possui uma conta ?
             <Text color="#0f94b5" ml="6px" fontSize="16px">
